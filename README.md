@@ -1,4 +1,4 @@
-# BTS Streamlit + Supabase App
+# BTS DATA 
 
 ## Use now
 1. Supabase > SQL Editor > New query > paste `supabase_schema.sql` > Run.
