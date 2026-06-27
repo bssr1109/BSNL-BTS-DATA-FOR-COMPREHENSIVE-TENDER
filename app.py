@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pandas as pd
 from supabase import create_client
 from io import BytesIO
@@ -23,9 +24,9 @@ div.stButton > button {width: 100%; min-height: 48px; font-size: 17px; border-ra
 
 st.title("BSNL BTS Field Data submission for Comprehensive Mtce Tender")
 
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
-MASTER_PASSWORD = st.secrets.get("MASTER_PASSWORD", "change_this_password")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+MASTER_PASSWORD = os.getenv("MASTER_PASSWORD", "1234")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 REQUIRED_FIELDS = [
